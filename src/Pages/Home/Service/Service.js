@@ -9,7 +9,7 @@ import { Divider } from '@mui/material';
 const Service = (props) => {
       const { name, description, img } = props.service;
       return (
-            <Grid item xs={2} sm={4} md={4}>
+            <Grid item xs={12} sm={12} md={4} lg={4}>
                   <Card sx={{ minWidth: 275, border: 0, boxShadow: 0, mt: 2 }}>
                         <CardMedia
                               component="img"

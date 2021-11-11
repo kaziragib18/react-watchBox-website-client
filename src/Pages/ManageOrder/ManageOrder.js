@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Shared/Navbar/Navbar'
-import './MyOrder.css'
+import './ManageOrder.css'
 
-const MyOrder = () => {
+const ManageOrder = () => {
       const [orders, setOrders] = useState([]);
       useEffect(() => {
             fetch('http://localhost:5000/orders')
@@ -29,12 +29,11 @@ const MyOrder = () => {
                   })
       }
 
-
       return (
             <>
                   <Navbar></Navbar>
                   <div id="orders" className="p-3">
-                        <h2 className="text-success mt-2 fs-3">Your Orders:</h2>
+                        <h2 className="text-success mt-2 fs-3">Manage All Orders:</h2>
                         <hr className="text-dark" />
                         <div className="order__div">
                               <div className="order__container">
@@ -56,7 +55,7 @@ const MyOrder = () => {
 
                                                       <h5 className="p-2 fs-6 fw-bold">Phone Number: {order.phone}</h5>
                                                       <hr />
-                                                      <button onClick={() => handleDelete(order._id)} className="btn btn-danger">Cancel</button>
+                                                      <button onClick={() => handleDelete(order._id)} className="btn btn-danger">Delete</button>
                                                 </div>
                                           )
                                     }
@@ -67,4 +66,4 @@ const MyOrder = () => {
       );
 };
 
-export default MyOrder;
+export default ManageOrder;

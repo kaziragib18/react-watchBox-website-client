@@ -37,7 +37,7 @@ const ManageProducts = () => {
                               {
                                     products.map(product => <div className="product__card pb-3">
                                           <img className="product__img" src={product.img} alt="" />
-                                          <h4 className="pt-3  fs-5 fw-bold">{product.name}</h4>
+                                          <h4 className="pt-3 fs-6 fw-bold">{product.name}</h4>
                                           <hr />
                                           <h4 className="pt-1  fs-6 fw-bold">{product.info}</h4>
                                           <hr />

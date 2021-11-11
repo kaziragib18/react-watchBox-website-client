@@ -11,6 +11,9 @@ import Order from './Pages/Home/Home/Order/Order';
 import AddOrder from './Pages/AddOrder/AddOrder';
 import MyOrder from './Pages/MyOrder/MyOrder';
 import ManageProducts from './Pages/ManageProducts/ManageProducts';
+import ManageOrder from './Pages/ManageOrder/ManageOrder';
+import NotFound from './Pages/NotFound/NotFound';
+import Login from './Pages/Login/Login/Login';
 
 function App() {
   return (
@@ -30,6 +33,10 @@ function App() {
             <Explore></Explore>
           </Route>
 
+          <Route exact path="/login">
+            <Login></Login>
+          </Route>
+
           <Route exact path="/addProduct">
             <AddProduct></AddProduct>
           </Route>
@@ -38,11 +45,11 @@ function App() {
             <ManageProducts></ManageProducts>
           </Route>
 
-          <Route exact path="/addOrder/:id">
+          <Route  exact path="/addOrder/:id">
             <AddOrder></AddOrder>
           </Route>
 
-          <Route path="/order/:id">
+          <Route exact path="/order/:id">
             <Order></Order>
             </Route>
 
@@ -50,6 +57,13 @@ function App() {
             <MyOrder></MyOrder>
             </Route>
 
+          <Route path="/manageOrder">
+            <ManageOrder></ManageOrder>
+            </Route>
+
+            <Route exact path="*">
+           <NotFound></NotFound>
+            </Route>
 
         </Switch>
 
