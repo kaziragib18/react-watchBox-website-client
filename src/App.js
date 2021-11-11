@@ -5,6 +5,12 @@ import {
   Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
+import Explore from './Pages/Explore/Explore/Explore';
+import AddProduct from './Pages/AddProduct/AddProduct';
+import Order from './Pages/Home/Home/Order/Order';
+import AddOrder from './Pages/AddOrder/AddOrder';
+import MyOrder from './Pages/MyOrder/MyOrder';
+import ManageProducts from './Pages/ManageProducts/ManageProducts';
 
 function App() {
   return (
@@ -20,10 +26,34 @@ function App() {
             <Home></Home>
           </Route>
 
-    
+          <Route exact path="/explore">
+            <Explore></Explore>
+          </Route>
+
+          <Route exact path="/addProduct">
+            <AddProduct></AddProduct>
+          </Route>
+
+          <Route exact path="/manageProducts">
+            <ManageProducts></ManageProducts>
+          </Route>
+
+          <Route exact path="/addOrder/:id">
+            <AddOrder></AddOrder>
+          </Route>
+
+          <Route path="/order/:id">
+            <Order></Order>
+            </Route>
+
+          <Route path="/myOrder">
+            <MyOrder></MyOrder>
+            </Route>
+
+
         </Switch>
-        
-    </Router>
+
+      </Router>
     </div>
   );
 }

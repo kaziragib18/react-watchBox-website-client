@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital@1&display=swap');
+
+.product__container{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      width: 100%;
+     
+}
+.product__img{
+      width: 100%;
+      border-radius: 15px 15px 0px 0px;
+}
+.product__card{
+      font-family:  poppins , sans-serif;
+      margin-top: 10px;
+      width: 100%;
+      /* padding:20px; */
+      background-color: #d5ecd6;
+      border-radius: 15px;
+}
+.product__div{
+      padding: 10px 40px 40px 40px;
+}
+
+@media only screen and (max-width:688px) {
+      .product__container{
+            grid-template-columns: repeat(1, 1fr);
+      }
+      
+}
+
+@media only screen and (min-width:689px) and (max-width:991px) {
+      .product__container{
+            grid-template-columns: repeat(2, 1fr);
+      }
+}

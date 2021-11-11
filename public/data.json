@@ -1,0 +1,44 @@
+[
+      {
+            "id": 1,
+            "name": "Personal Trainers",
+            "info": " ",
+            "description": "Maximize your workout with the help of our personal trainers.",
+            "img": "https://powerhousegym.com/wp-content/uploads/2021/03/03-personal-trainers.png"
+      },
+      {
+            "id": 2,
+            "name": "Private Locker Rooms",
+            "info": " ",
+            "description": "Our locker rooms are equipped to help you be on your way after a workout.",
+            "img": "https://powerhousegym.com/wp-content/uploads/2021/03/08-private-locker-rooms.png"
+      },
+      {
+            "id": 3,
+            "name": "Spa Services",
+            "info": " ",
+            "description": "Relax after an intense workout with any one of our spa services.",
+            "img": "https://powerhousegym.com/wp-content/uploads/2021/03/04-spa-services.png"
+      },
+      {
+            "id": 4,
+            "name": "Aquatic Pool",
+            "info": " ",
+            "description": "Enjoy your workout knowing your children are safe & nearby.",
+            "img": "https://powerhousegym.com/wp-content/uploads/2021/03/06-aquatic-pool.png"
+      },
+      {
+            "id": 5,
+            "name": "Group Classes",
+            "info": " ",
+            "description": "We offer classes for yoga, spin, Zumba, Circuit Training, MX4 and more.",
+            "img": "https://powerhousegym.com/wp-content/uploads/2021/03/02-group-classes.png"
+      },
+      {
+            "id": 6,
+            "name": "24/7 Access",
+            "info": " ",
+            "description": "Workout when the time is right for you with 24/7 access.",
+            "img": "https://powerhousegym.com/wp-content/uploads/2021/03/09-247-access.png"
+      }
+]
