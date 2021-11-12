@@ -37,9 +37,9 @@ const ManageProducts = () => {
                               {
                                     products.map(product => <div className="product__card pb-3">
                                           <img className="product__img" src={product.img} alt="" />
-                                          <h4 className="pt-3 fs-6 fw-bold">{product.name}</h4>
+                                          <h4 className="pt-3 fs-6 fw-bold">{product.brand}</h4>
                                           <hr />
-                                          <h4 className="pt-1  fs-6 fw-bold">{product.info}</h4>
+                                          <h4 className="pt-1 fs-6 fw-bold">{product.series}</h4>
                                           <hr />
                                           <h5 className="p-2 fs-6">{product.description}</h5>
                                           <button onClick={() =>handleDelete(product._id)} className="btn btn-danger">Delete</button>

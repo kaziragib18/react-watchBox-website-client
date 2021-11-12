@@ -21,10 +21,10 @@ const AddProduct = () => {
             <div className="add__product">
                   <h2 className="text-info p-3 mt-5">Add New Products</h2>
                   <form onSubmit={handleSubmit(onSubmit)}>
-                        <input  {...register("name", { required: true, maxLength: 50 })} placeholder="Name" required />
-                        <input  {...register("info", { required: true, maxLength: 50 })} placeholder="Series" required />
-                        <textarea {...register("description")} placeholder="Description" required />
-                        <input type="number" {...register("price")} placeholder="Price" required />
+                        <input {...register("brand", { required: true, maxLength: 50 })} placeholder="Brand" />
+                        <input  {...register("series", { required: true, maxLength: 50 })} placeholder="Series" />
+                        <textarea {...register("description")} placeholder="Description" />
+                        <input type="number" {...register("price")} placeholder="Price"  />
                         <input {...register("img")} placeholder="Image url" required />
                         <button className="btn btn-primary py-2 px-4 mt-2 mb-5" type="submit">Submit</button>
                   </form>

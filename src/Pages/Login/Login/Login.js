@@ -1,20 +1,17 @@
 import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
-// import { NavLink, useLocation, useHistory } from 'react-router-dom';
-import login from '../../../images/login-3.jpg';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import login from '../../../images/login-2.jpg';
 import Navbar from '../../Shared/Navbar/Navbar';
 import googleIcon from '../../../images/google-symbol.png'
-import { NavLink } from 'react-router-dom';
-// import useAuth from '../../../hooks/useAuth';
+import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
       const [loginData, setLoginData] = useState({});
+      const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
 
-
-      const handleLoginSubmit = e => {
-            alert('hello')
-            e.preventDefault();
-      }
+      const location = useLocation();
+      const history = useHistory();
 
       const handleOnBlur = e => {
             const field = e.target.name;
@@ -24,6 +21,15 @@ const Login = () => {
             newLoginData[field] = value;
             setLoginData(newLoginData);
       }
+
+      const handleLoginSubmit = e => {
+            loginUser(loginData.email, loginData.password, location, history);
+            e.preventDefault();
+      }
+      const handleGoogleSignIn = () => {
+            signInWithGoogle(location, history)
+      }
+      
       return (
             <>
                   <Navbar></Navbar>
@@ -33,10 +39,11 @@ const Login = () => {
                                     <Typography variant="body1" style={{ fontSize: "18px", fontWeight: "400", color: "gray" }} gutterBottom>Login
                                     </Typography>
 
-                                    {/* {isLoading && <CircularProgress />
-                              } */}
+                                    {isLoading && <CircularProgress />
+                                    }
                                     <form>
                                           <TextField
+                                                required
                                                 sx={{ width: '75%', m: 1 }}
                                                 id="standard-basic"
                                                 label="Your Email"
@@ -46,6 +53,7 @@ const Login = () => {
                                                 variant="standard"
                                           />
                                           <TextField
+                                                required
                                                 sx={{ width: '75%', m: 1 }}
                                                 id="standard-basic"
                                                 label="Your Password"
@@ -68,10 +76,10 @@ const Login = () => {
                                                 <Button sx={{ color: '#2e7d32', fontSize: 12 }}
                                                 >New user? Please Register</Button>
                                           </NavLink>
-                                          {/* {user?.email && <Alert severity="success" style={{ width: "100%", justifyContent: 'center', alignItems: 'center' }}>SuccessFully logged in
-                                    </Alert>}
-                                    {authError && <Alert severity="error" style={{ width: "100%", justifyContent: 'center', alignItems: 'center' }}>{authError}
-                                    </Alert>} */}
+                                          {user?.email && <Alert severity="success" style={{ width: "100%", justifyContent: 'center', alignItems: 'center' }}>SuccessFully logged in
+                                          </Alert>}
+                                          {authError && <Alert severity="error" style={{ width: "100%", justifyContent: 'center', alignItems: 'center' }}>{authError}
+                                          </Alert>}
                                     </form>
 
                                     <hr style={{ color: "gray" }} />
@@ -79,7 +87,7 @@ const Login = () => {
                                     <Typography variant="body1" style={{ fontSize: "14px", fontWeight: "500", color: "gray" }} gutterBottom>You Can Also Sign in With:
                                     </Typography>
 
-                                    <Button style={{ width: "16%", }} ><img src={googleIcon} style={{ width: "100%" }} alt="google-icon" /></Button>
+                                    <Button onClick={handleGoogleSignIn} style={{ width: "16%", }} ><img src={googleIcon} style={{ width: "100%" }} alt="google-icon" /></Button>
                               </Grid>
 
                               <Grid item xs={12} md={6}>

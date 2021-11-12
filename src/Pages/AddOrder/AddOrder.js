@@ -2,12 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import './AddOrder.css';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Navbar from '../Shared/Navbar/Navbar';
+import useAuth from '../../hooks/useAuth';
 
 const AddOrder = () => {
+      const { user } = useAuth();
       const { id } = useParams();
       const [product, setProduct] = useState([]);
 
@@ -18,6 +20,7 @@ const AddOrder = () => {
       })
 
       const { register, handleSubmit, reset } = useForm();
+      let history = useHistory();
 
       const onSubmit = data => {
             console.log(data);
@@ -26,7 +29,7 @@ const AddOrder = () => {
                         console.log(res);
                         if (res.data.insertedId) {
                               alert('Successfully Added');
-                              // history.push("/myOrder");
+                              history.push("/myOrder");
                               reset();
                         }
                   })
@@ -38,13 +41,13 @@ const AddOrder = () => {
                   <div className="add__order">
                         <h2 className="text-success fs-3  mt-4 pb-2">For Purchasing Please Fill up the Form</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
-                              <input type="text" {...register("name", { maxLength: 20 })} />
-                              <input type="email" {...register("email", { maxLength: 30 })} />
-                              <input {...register("phone")} placeholder="Phone Number" required />
-                              <input {...register("price")} placeholder="Price" required />
+                              <input type="text" {...register("name", { maxLength: 20 })} value={user.displayName}/>
+                              <input type="email" {...register("email", { maxLength: 30 })} value={user.email} />
+                              <input type="number" {...register("phone")} placeholder="Phone Number" required />
                               <textarea {...register("address")} placeholder="Enter your address" required />
-                              <input {...register("description")} value={product.name} />
-                              <input {...register("info")} value={product.info} />
+                              <input {...register("brand")} value={product.brand} />
+                              <input {...register("series")} value={product.series} />
+                              <input {...register("price")}value={product.price}/>
                               <button className="btn btn-success py-2 px-4 mt-2 mb-5" type="submit">Submit</button>
                         </form>
                   </div>

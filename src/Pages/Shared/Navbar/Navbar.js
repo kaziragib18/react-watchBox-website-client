@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import { useTheme } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
@@ -14,8 +14,10 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import useAuth from '../../../hooks/useAuth';
 
 const Navbar = () => {
+      const { user, logOut } = useAuth();
       const theme = useTheme();
       const useStyle = makeStyles({
             navItem: {
@@ -66,26 +68,36 @@ const Navbar = () => {
                                           <MenuIcon />
                                     </IconButton>
 
+
                                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'poppins', fontSize: 22, fontWeight: 700, textAlign: 'start' }}>
-                                          WatchBox
+                                          <Link style={{ textDecoration: 'none', color: 'white' }} to='/'>WatchBox</Link>
                                     </Typography>
 
                                     <Box className={navItemContainer}>
-                                          <Link className={navItem} to='/home'>
-                                                <Button style={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 700 }} color="inherit">Home</Button>
-                                          </Link>
+                                          <NavLink className={navItem} to='/home'>
+                                                <Button style={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 700, color: "white" }} color="inherit">Home</Button>
+                                          </NavLink>
 
-                                          <Link className={navItem} to='/explore'>
-                                                <Button style={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 700 }} color="inherit">Explore</Button>
-                                          </Link>
+                                          <NavLink className={navItem} to='/explore'>
+                                                <Button style={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 700, color: "white" }} color="inherit">Explore</Button>
+                                          </NavLink>
 
-                                          <Link className={navItem} to='/myOrder'>
-                                                <Button style={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 700 }} color="inherit">My Order</Button>
-                                          </Link>
+                                          <NavLink className={navItem} to='/myOrder'>
+                                                <Button style={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 700, color: "white" }} color="inherit">My Order</Button>
+                                          </NavLink>
 
-                                          <Link className={navItem} to='/login'>
-                                                <Button style={{ textDecoration: "none", color: "white", fontFamily: 'poppins', fontSize: 14, fontWeight: 700 }} color="inherit">Login</Button>
-                                          </Link>
+                                          {user?.email ?
+                                                <>
+                                                      <NavLink className={navItem} style={{ textDecoration: "none", color: "white" }} to="/dashboard">
+                                                            <Button style={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 700 }} color="inherit">Dashboard</Button>
+                                                      </NavLink>
+                                                      <Button onClick={logOut} style={{ color: "red", fontFamily: 'poppins', fontSize: 16, marginBottom: 2, fontWeight: 700 }} color="error">Logout</Button>
+                                                </>
+                                                :
+                                                <NavLink className={navItem} to='/login'>
+                                                      <Button style={{ textDecoration: "none", color: "white", fontFamily: 'poppins', fontSize: 14, fontWeight: 700 }} color="inherit">Login</Button>
+                                                </NavLink>
+                                          }
                                     </Box>
                               </Toolbar>
                         </AppBar>

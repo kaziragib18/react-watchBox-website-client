@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import useAuth from '../../hooks/useAuth';
 import Navbar from '../Shared/Navbar/Navbar'
 import './MyOrder.css'
 
+
 const MyOrder = () => {
       const [orders, setOrders] = useState([]);
+      const { user } = useAuth();
+
       useEffect(() => {
-            fetch('http://localhost:5000/orders')
+            fetch('http://localhost:5000/orders?email=' + user.email)
                   .then(res => res.json())
                   .then(data => setOrders(data))
       }, []);
@@ -29,7 +33,6 @@ const MyOrder = () => {
                   })
       }
 
-
       return (
             <>
                   <Navbar></Navbar>
@@ -48,9 +51,15 @@ const MyOrder = () => {
                                                       <h4 className="pt-1  fs-6 fw-bold">Email: {order.email}</h4>
                                                       <hr />
 
-                                                      <h4 className="pt-1  fs-6 fw-bold">Product Info: {order.description} - {order.info}</h4>
-
+                                                      <h4 className="pt-1  fs-6 fw-bold">Brand: {order.brand}</h4>
                                                       <hr />
+
+                                                      <h4 className="pt-1  fs-6 fw-bold">Series: {order.series}</h4>
+                                                      <hr />
+
+                                                      <h4 className="pt-1  fs-6 fw-bold">Price: {order.price}</h4>
+                                                      <hr />
+
                                                       <h4 className="pt-1  fs-6 fw-bold">Order Id: {order._id}</h4>
                                                       <hr />
 
