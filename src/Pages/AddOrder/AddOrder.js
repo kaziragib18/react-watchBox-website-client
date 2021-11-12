@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Navbar from '../Shared/Navbar/Navbar';
 import useAuth from '../../hooks/useAuth';
+// import { Button } from '@mui/material';
 
 const AddOrder = () => {
       const { user } = useAuth();
@@ -41,14 +42,18 @@ const AddOrder = () => {
                   <div className="add__order">
                         <h2 className="text-success fs-3  mt-4 pb-2">For Purchasing Please Fill up the Form</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
-                              <input type="text" {...register("name", { maxLength: 20 })} value={user.displayName}/>
+                              <input type="text" {...register("name", { maxLength: 20 })} value={user.displayName} />
                               <input type="email" {...register("email", { maxLength: 30 })} value={user.email} />
                               <input type="number" {...register("phone")} placeholder="Phone Number" required />
                               <textarea {...register("address")} placeholder="Enter your address" required />
                               <input {...register("brand")} value={product.brand} />
                               <input {...register("series")} value={product.series} />
-                              <input {...register("price")}value={product.price}/>
+                              <input {...register("price")} value={product.price} />
                               <button className="btn btn-success py-2 px-4 mt-2 mb-5" type="submit">Submit</button>
+
+                              {/* <Button variant="contained"
+                                    sx={{ width: "15%", m: 1 }}
+                                    style={{ backgroundColor: '#a5d6a7' }}>Submit</Button> */}
                         </form>
                   </div>
             </>

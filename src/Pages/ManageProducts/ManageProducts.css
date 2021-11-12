@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital@1&display=swap');
 
-.product__container{
+.All_product__container{
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       grid-gap: 20px;
       width: 100%;
      
@@ -16,7 +16,7 @@
       margin-top: 10px;
       width: 100%;
       /* padding:20px; */
-      background-color: #d5ecd6;
+      background-color: #f1f8f2;
       border-radius: 15px;
 }
 .product__div{

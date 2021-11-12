@@ -19,14 +19,14 @@ const AddProduct = () => {
 
       return (
             <div className="add__product">
-                  <h2 className="text-info p-3 mt-5">Add New Products</h2>
+                  <h2 className="text-success fs-4 p-3 mt-0">Add New Products</h2>
                   <form onSubmit={handleSubmit(onSubmit)}>
                         <input {...register("brand", { required: true, maxLength: 50 })} placeholder="Brand" />
                         <input  {...register("series", { required: true, maxLength: 50 })} placeholder="Series" />
                         <textarea {...register("description")} placeholder="Description" />
                         <input type="number" {...register("price")} placeholder="Price"  />
                         <input {...register("img")} placeholder="Image url" required />
-                        <button className="btn btn-primary py-2 px-4 mt-2 mb-5" type="submit">Submit</button>
+                        <button className="btn btn-success py-2 px-4 mt-2 mb-5" type="submit">Submit</button>
                   </form>
             </div>
       );

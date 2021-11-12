@@ -12,10 +12,15 @@ import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { Switch, Route, useRouteMatch } from "react-router-dom";
-// import MakeAdmin from '../MakeAdmin/MakeAdmin';
 // import DashboardHome from '../DashboardHome/DashboardHome';
-// import useAuth from './../../../hooks/useAuth';
 // import AdminRoute from '../../Login/Login/AdminRoute/AdminRoute';
+import useAuth from './../../../hooks/useAuth';
+import AddProduct from '../../AddProduct/AddProduct';
+import ManageProducts from '../../ManageProducts/ManageProducts';
+import ManageOrder from '../../ManageOrder/ManageOrder';
+import Payment from '../../Payment/Payment';
+import AddReview from '../../AddReview/AddReview';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
 const drawerWidth = 205;
 
@@ -24,7 +29,7 @@ function Dashboard(props) {
       const [mobileOpen, setMobileOpen] = React.useState(false);
       let { path, url } = useRouteMatch();
 
-      // const { admin } = useAuth();
+      const { admin } = useAuth();
 
       const handleDrawerToggle = () => {
             setMobileOpen(!mobileOpen);
@@ -35,40 +40,44 @@ function Dashboard(props) {
                   <Toolbar />
                   <Divider />
                   <Link style={{ textDecoration: "none", color: "gray" }} to="/home">
-                        <Button color="inherit" sx={{ px: 10, py: 2, fontWeight: 700, fontSize:12 }}>Home</Button>
+                        <Button color="inherit" sx={{ px: 10, py: 2, fontWeight: 700, fontSize: 12 }}>Home</Button>
                   </Link>
 
                   <Link style={{ textDecoration: "none", color: "gray" }} to="/explore">
-                        <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700, fontSize:12 }}>Explore</Button>
+                        <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700, fontSize: 12 }}>Explore</Button>
                   </Link>
-                  
-                  <Link style={{ textDecoration: "none", color: "gray" }} to="/addReview">
-                        <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700,fontSize:12 }}>Add Review</Button>
-                  </Link>
-
                   <Divider />
 
+                  <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/addReview`}>
+                        <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700, fontSize: 12 }}>Add Review</Button>
+                  </Link>
+
+                  <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/payment`}>
+                        <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700, fontSize: 12 }}>Payment</Button>
+                  </Link>
+
+
+
                   {/* <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}`}>
-                        <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700 }}>Dashboard</Button>
+                        <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700, fontSize:12  }}>Dashboard</Button>
                   </Link> */}
 
-                  {/* {admin &&  */}
-                  <Box>
+                  {admin && <Box>
                         <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/makeAdmin`}>
-                              <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700, fontSize:12 }}>Make Admin</Button>
+                              <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700, fontSize: 12 }}>Make Admin</Button>
                         </Link>
 
                         <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/addProduct`}>
-                              <Button color="inherit" sx={{ px: 5, py: 2, fontWeight: 700, fontSize:12 }}>Add Product</Button>
+                              <Button color="inherit" sx={{ px: 5, py: 2, fontWeight: 700, fontSize: 12 }}>Add Product</Button>
                         </Link>
                         <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/manageProducts`}>
-                              <Button color="inherit" sx={{ px: 4, py: 2, fontWeight: 700, fontSize:12 }}>Manage Products</Button>
+                              <Button color="inherit" sx={{ px: 4, py: 2, fontWeight: 700, fontSize: 12 }}>Manage Products</Button>
                         </Link>
                         <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/manageOrder`}>
-                              <Button color="inherit" sx={{ px: 4, py: 2, fontWeight: 700, fontSize:12 }}>Manage Order</Button>
+                              <Button color="inherit" sx={{ px: 4, py: 2, fontWeight: 700, fontSize: 12 }}>Manage Order</Button>
                         </Link>
                   </Box>
-                  {/* } */}
+                  }
 
 
                   {/* <List >
@@ -149,18 +158,37 @@ function Dashboard(props) {
                         <Toolbar />
 
                         <Switch>
-                              
+
                               {/* <Route exact path={path}>
                                     <DashboardHome></DashboardHome>
                               </Route> */}
 
-                              {/* <AdminRoute path={`${path}/makeAdmin`}>
+                              <Route path={`${path}/makeAdmin`}>
                                     <MakeAdmin></MakeAdmin>
-                              </AdminRoute> */}
+                              </Route>
 
-                              {/* <AdminRoute path={`${path}/addDoctor`}>
-                                    <AddDoctor></AddDoctor>
-                              </AdminRoute> */}
+                              <Route path={`${path}/addReview`}>
+                                    <AddReview></AddReview>
+                              </Route>
+
+                              <Route path={`${path}/payment`}>
+                                    <Payment></Payment>
+                              </Route>
+
+                              <Route path={`${path}/addProduct`}>
+                                    <AddProduct></AddProduct>
+                              </Route>
+
+                              <Route path={`${path}/manageProducts`}>
+                                    <ManageProducts></ManageProducts>
+                              </Route>
+
+                              <Route path={`${path}/addProduct`}>
+                                    <AddProduct></AddProduct>
+                              </Route>
+                              <Route path={`${path}/manageOrder`}>
+                                    <ManageOrder></ManageOrder>
+                              </Route>
 
                         </Switch>
 

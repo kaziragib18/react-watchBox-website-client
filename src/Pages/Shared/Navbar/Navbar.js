@@ -68,7 +68,6 @@ const Navbar = () => {
                                           <MenuIcon />
                                     </IconButton>
 
-
                                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontFamily: 'poppins', fontSize: 22, fontWeight: 700, textAlign: 'start' }}>
                                           <Link style={{ textDecoration: 'none', color: 'white' }} to='/'>WatchBox</Link>
                                     </Typography>

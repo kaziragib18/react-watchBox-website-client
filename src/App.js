@@ -18,6 +18,9 @@ import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider'
 import PrivateRoute from './Pages/Login/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard'
+import Payment from './Pages/Payment/Payment';
+import AddReview from './Pages/AddReview/AddReview';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 
 function App() {
   return (
@@ -72,6 +75,18 @@ function App() {
 
             <Route exact path="/manageOrder">
               <ManageOrder></ManageOrder>
+            </Route>
+
+            <Route exact path="/addReview">
+              <AddReview></AddReview>
+            </Route>
+
+            <Route exact path="/payment">
+              <Payment></Payment>
+            </Route>
+
+            <Route exact path="/makeAdmin">
+              <MakeAdmin></MakeAdmin>
             </Route>
 
             <Route exact path="*">

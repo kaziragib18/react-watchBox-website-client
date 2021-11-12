@@ -30,10 +30,10 @@ const ManageProducts = () => {
 
       return (
             <div id="products" className="p-3">
-                  <h2 className="text-success mt-2 fs-3">Manage all products</h2>
+                  <h2 className="text-success fs-4">Manage All Products</h2>
                   <hr className="text-dark" />
                   <div className="product__div">
-                        <div className="product__container">
+                        <div className="All_product__container">
                               {
                                     products.map(product => <div className="product__card pb-3">
                                           <img className="product__img" src={product.img} alt="" />
