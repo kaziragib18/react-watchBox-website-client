@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import bannerImg from '../../../images/banner5.png';
 import bg from '../../../images/bg.png';
 import { Typography, Button, Container } from '@mui/material';
+import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 
 const bannerBg = {
@@ -29,7 +30,9 @@ const Banner = () => {
                                     <Typography variant="h6" sx={{ my: 3, fontSize: 13, fontWeight: 300, color: 'gray' }}>
                                           From timeless classics to the most innovative independent brands, take your collection to new heights with a selection of exceptional timepieces.
                                     </Typography>
-                                    <Button variant="contained" style={{ backgroundColor: '#a5d6a7' }}>Get Appointment</Button>
+                                    <Link style={{textDecoration:"none"}} to='/explore'>
+                                    <Button variant="contained" style={{ backgroundColor: '#a5d6a7' }}>Explore</Button>
+                                    </Link>
                               </Box>
                         </Grid>
                         <Grid item xs={12} md={6} style={verticalCenter} >

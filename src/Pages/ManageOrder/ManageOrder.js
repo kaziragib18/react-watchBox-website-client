@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../Shared/Navbar/Navbar'
 import './ManageOrder.css'
 
 const ManageOrder = () => {
