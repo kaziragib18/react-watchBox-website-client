@@ -12,7 +12,6 @@ import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { Switch, Route, useRouteMatch } from "react-router-dom";
-// import DashboardHome from '../DashboardHome/DashboardHome';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import useAuth from './../../../hooks/useAuth';
 import AddProduct from '../../AddProduct/AddProduct';
@@ -21,6 +20,9 @@ import ManageProducts from '../../ManageProducts/ManageProducts';
 import Payment from '../../Payment/Payment';
 import AddReview from '../../AddReview/AddReview';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import DashboardHome from '../../Dashboard/DashboardHome/DashboardHome';
+import userIcon from '../../../images/userIcon-2.png';
+import logout from '../../../images/logout.png';
 
 const drawerWidth = 205;
 
@@ -40,24 +42,24 @@ function Dashboard(props) {
                   <Toolbar />
                   <Divider />
                   <Link style={{ textDecoration: "none", color: "gray" }} to="/home">
-                        <Button color="inherit" sx={{ px: 10, py: 2, fontWeight: 700, fontSize: 12 }}>Home</Button>
+                        <Button color="inherit" sx={{ px: 6, py: 2, fontFamily: 'poppins', fontSize: 13, fontWeight: 700, color: "#2e7d32" }}>Home</Button>
                   </Link>
 
                   <Link style={{ textDecoration: "none", color: "gray" }} to="/explore">
-                        <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700, fontSize: 12 }}>Explore</Button>
+                        <Button color="inherit" sx={{ px: 7, py: 2, fontFamily: 'poppins', fontSize: 13, fontWeight: 700, color: "#2e7d32" }}>Explore</Button>
                   </Link>
 
                   <Link style={{ textDecoration: "none", color: "gray" }} to="/myOrder">
-                        <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700, fontSize: 12 }}>My Order</Button>
+                        <Button color="inherit" sx={{ px: 6, py: 2, fontFamily: 'poppins', fontSize: 13, fontWeight: 700, color: "#2e7d32" }}>My Order</Button>
                   </Link>
                   <Divider />
 
                   <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/addReview`}>
-                        <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700, fontSize: 12 }}>Add Review</Button>
+                        <Button color="inherit" sx={{ px: 6, py: 2, fontFamily: 'poppins', fontSize: 13, fontWeight: 700, color: "#2e7d32" }}>Add Review</Button>
                   </Link>
 
                   <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/payment`}>
-                        <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700, fontSize: 12 }}>Payment</Button>
+                        <Button color="inherit" sx={{ px: 7, py: 2, fontFamily: 'poppins', fontSize: 13, fontWeight: 700, color: "#2e7d32" }}>Payment</Button>
                   </Link>
 
 
@@ -67,14 +69,14 @@ function Dashboard(props) {
 
                   {admin && <Box>
                         <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/makeAdmin`}>
-                              <Button color="inherit" sx={{ px: 7, py: 2, fontWeight: 700, fontSize: 12 }}>Make Admin</Button>
+                              <Button color="inherit" sx={{ px: 5, py: 2, fontFamily: 'poppins', fontSize: 13, fontWeight: 700, color: "#2e7d32" }}>Make Admin</Button>
                         </Link>
 
                         <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/addProduct`}>
-                              <Button color="inherit" sx={{ px: 5, py: 2, fontWeight: 700, fontSize: 12 }}>Add Product</Button>
+                              <Button color="inherit" sx={{ px: 5, py: 2, fontFamily: 'poppins', fontSize: 13, fontWeight: 700, color: "#2e7d32" }}>Add Product</Button>
                         </Link>
                         <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/manageProducts`}>
-                              <Button color="inherit" sx={{ px: 4, py: 2, fontWeight: 700, fontSize: 12 }}>Manage Products</Button>
+                              <Button color="inherit" sx={{ px: 2, py: 2, fontFamily: 'poppins', fontSize: 13, fontWeight: 700, color: "#2e7d32" }}>Manage Products</Button>
                         </Link>
 
                         {/* <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/manageOrder`}>
@@ -85,12 +87,12 @@ function Dashboard(props) {
 
                   <Divider />
 
-                  <Typography style={{ color: "#2e7d32", fontFamily: 'poppins', fontSize: 14, marginTop: 20, marginBottom: 10, fontWeight: 700 }} color="error">{user.displayName}</Typography>
+                  <Typography style={{ color: "#212121", fontFamily: 'poppins', fontSize: 16, marginTop: 20, marginBottom: 10, fontWeight: 700 }} color="error"><img style={{ width: '10%', marginBottom: 5, marginRight: 10 }} src={userIcon} alt="" /> {user.displayName}</Typography>
 
 
 
                   <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/`}>
-                        <Button onClick={logOut} style={{ color: "red", fontFamily: 'poppins', fontSize: 14, marginBottom: 2, fontWeight: 700 }} color="error">Logout</Button>
+                        <Button onClick={logOut} style={{ color: "#b71c1c", fontFamily: 'poppins', fontSize: 14, marginBottom: 2, fontWeight: 700 }} color="error"><img style={{ width: '10%', marginBottom: 1, marginRight: 10 }} src={logout} alt="" />Logout</Button>
                   </Link>
 
 
@@ -173,9 +175,9 @@ function Dashboard(props) {
 
                         <Switch>
 
-                              {/* <Route exact path={path}>
+                              <Route exact path={path}>
                                     <DashboardHome></DashboardHome>
-                              </Route> */}
+                              </Route>
 
                               <Route path={`${path}/addReview`}>
                                     <AddReview></AddReview>

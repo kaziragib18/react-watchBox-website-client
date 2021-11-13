@@ -69,9 +69,9 @@ function App() {
               <Order></Order>
             </Route>
 
-            <Route path="/myOrder">
+            <PrivateRoute path="/myOrder">
               <MyOrder></MyOrder>
-            </Route>
+            </PrivateRoute>
 
             <Route exact path="/manageOrder">
               <ManageOrder></ManageOrder>

@@ -4,33 +4,33 @@ import './ManageProducts.css';
 const ManageProducts = () => {
       const [products, setProducts] = useState([])
       useEffect(() => {
-            fetch('http://localhost:5000/products')
+            fetch('https://desolate-springs-66331.herokuapp.com/products')
                   .then(res => res.json())
                   .then(data => setProducts(data))
       }, []);
 
       const handleDelete = id => {
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://desolate-springs-66331.herokuapp.com/products/${id}`;
             fetch(url, {
                   method: 'DELETE'
             })
                   .then(res => res.json())
                   .then(data => {
                         console.log(data);
-                       
+
                         if (id) {
                               alert('Products Permanently Deleted!');
                               const remaining = products.filter(product => product._id !== id);
                               setProducts(remaining);
-                              
+
                         }
-                        
+
                   })
       }
 
       return (
             <div id="products" className="p-3">
-                  <h2 className="text-success fs-4">Manage All Products</h2>
+                  <h2 style={{ fontFamily: 'poppins', fontSize: 20, fontWeight: 700, color: "#a5d6a7" }} className="fs-4">Manage All Products</h2>
                   <hr className="text-dark" />
                   <div className="product__div">
                         <div className="All_product__container">
@@ -42,7 +42,7 @@ const ManageProducts = () => {
                                           <h4 className="pt-1 fs-6 fw-bold">{product.series}</h4>
                                           <hr />
                                           <h5 className="p-2 fs-6">{product.description}</h5>
-                                          <button onClick={() =>handleDelete(product._id)} className="btn btn-danger">Delete</button>
+                                          <button onClick={() => handleDelete(product._id)} className="btn btn-danger">Delete</button>
 
                                     </div>
 

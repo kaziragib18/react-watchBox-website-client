@@ -8,14 +8,14 @@ const FeatureProduct = () => {
       // const { isLoading } = useAuth();
       const [products, setProducts] = useState([])
       useEffect(() => {
-            fetch('http://localhost:5000/products')
+            fetch('https://desolate-springs-66331.herokuapp.com/products')
                   .then(res => res.json())
                   .then(data => setProducts(data))
       })
 
       return (
             <div id="products" className="p-3">
-                  <h2 className="text-success mt-4 fs-4">Check Out Our Latest Arrival</h2>
+                  <h2 style={{fontFamily: 'poppins', fontWeight:600, color:"#a5d6a7"}} className="mt-4 fs-4">Check Out Our Latest Arrival</h2>
                   <hr className="dark"/>
                   {/* 
                   {isLoading && <CircularProgress />

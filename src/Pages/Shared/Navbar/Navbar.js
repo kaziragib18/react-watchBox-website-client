@@ -90,7 +90,7 @@ const Navbar = () => {
                                                       <NavLink className={navItem} style={{ textDecoration: "none", color: "white" }} to="/dashboard">
                                                             <Button style={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 700 }} color="inherit">Dashboard</Button>
                                                       </NavLink>
-                                                      <Button onClick={logOut} style={{ color: "red", fontFamily: 'poppins', fontSize: 16, marginBottom: 2, fontWeight: 700 }} color="error">Logout</Button>
+                                                      <Button onClick={logOut} style={{ color: "#b71c1c", fontFamily: 'poppins', fontSize: 16, marginBottom: 2, fontWeight: 700 }} color="error">Logout</Button>
                                                 </>
                                                 :
                                                 <NavLink className={navItem} to='/login'>

@@ -15,10 +15,9 @@ const MakeAdmin = () => {
       const handleAdminSubmit = e => {
             const user = { email };
             
-            fetch('http://localhost:5000/users/admin', {
+            fetch('https://desolate-springs-66331.herokuapp.com/users/admin', {
                   method: 'PUT',
                   headers: {
-                        // 'authorization': `Bearer ${token}`,
                         'content-type': 'application/json'
                   },
                   body: JSON.stringify(user)
@@ -51,7 +50,7 @@ const MakeAdmin = () => {
                   >
                         <Paper elevation={5}>
                               <form>
-                                    <Typography variant="body1" sx={{ mt: 3 }} style={{ fontSize: "22px", fontWeight: "400", color: "#2e7d32" }} gutterBottom>Make New Admin
+                                    <Typography variant="body1" sx={{ mt: 3 }} style={{fontFamily: 'poppins', fontSize: 20, fontWeight: 700, color: "#a5d6a7"}} gutterBottom>Make New Admin
                                     </Typography>
                                     <hr />
                                     <TextField
@@ -67,7 +66,7 @@ const MakeAdmin = () => {
                                           onClick={handleAdminSubmit}
                                           variant="contained"
                                           sx={{ width: "15%", m: 1 }}
-                                          style={{ backgroundColor: '#388e3c' }}
+                                          style={{ backgroundColor: '#388e3c',fontFamily: 'poppins',  }}
                                     >Make Admin</Button>
                               </form>
                               {success && <Alert severity="success" style={{ width: "100%", justifyContent: 'center', alignItems: 'center' }}>SuccessFully Made New Admin!

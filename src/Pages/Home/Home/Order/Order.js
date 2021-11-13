@@ -10,7 +10,7 @@ const Order = () => {
       // console.log(id);
 
       useEffect(() => {
-            fetch(`http://localhost:5000/products/${id}`)
+            fetch(`https://desolate-springs-66331.herokuapp.com/products/${id}`)
                   .then(res => res.json())
                   .then(data => setProduct(data))
 

@@ -14,7 +14,7 @@ const AddOrder = () => {
       const [product, setProduct] = useState([]);
 
       useEffect(() => {
-            fetch(`http://localhost:5000/products/${id}`)
+            fetch(`https://desolate-springs-66331.herokuapp.com/products/${id}`)
                   .then(res => res.json())
                   .then(data => setProduct(data))
       }, [id])
@@ -24,7 +24,7 @@ const AddOrder = () => {
 
       const onSubmit = data => {
             console.log(data);
-            axios.post('http://localhost:5000/orders', data)
+            axios.post('https://desolate-springs-66331.herokuapp.com/orders', data)
                   .then(res => {
                         console.log(res);
                         if (res.data.insertedId) {
@@ -39,7 +39,7 @@ const AddOrder = () => {
             <>
                   <Navbar></Navbar>
                   <div className="add__order">
-                        <h2 className="text-success fs-3  mt-4 pb-2">For Purchasing Please Fill up the Form</h2>
+                        <h2 style={{fontFamily: 'poppins', fontWeight:600, color:"#a5d6a7"}} className="fs-3  mt-4 pb-2">For Purchasing Please Fill up the Form</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
                               <input type="name" {...register("name", { maxLength: 20 })} value={user.displayName} />
                               <input type="email" {...register("email", { maxLength: 30 })} value={user.email} />

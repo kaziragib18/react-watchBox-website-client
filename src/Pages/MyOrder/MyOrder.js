@@ -8,13 +8,13 @@ const MyOrder = () => {
       const { user } = useAuth();
 
       useEffect(() => {
-            fetch('http://localhost:5000/orders?email='+user.email)
+            fetch('https://desolate-springs-66331.herokuapp.com/orders?email='+user.email)
                   .then(res => res.json())
                   .then(data => setOrders(data))
       }, []);
 
       const handleDelete = id => {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://desolate-springs-66331.herokuapp.com/orders/${id}`;
             fetch(url, {
                   method: 'DELETE'
             })
@@ -33,7 +33,7 @@ const MyOrder = () => {
             <>
                   <Navbar></Navbar>
                   <div id="orders" className="p-3">
-                        <h2 className="text-success mt-2 fs-3">Your Orders:</h2>
+                        <h2 style={{fontFamily: 'poppins', fontWeight:600, color:"#a5d6a7"}} className="mt-2 fs-3">Your Orders:</h2>
                         <hr className="text-dark" />
                         <div className="order__div">
                               <div className="order__container">

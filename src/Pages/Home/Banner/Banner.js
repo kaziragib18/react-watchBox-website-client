@@ -23,15 +23,15 @@ const Banner = () => {
                   <Grid container spacing={2}>
                         <Grid item style={{ ...verticalCenter, textAlign: 'left' }} xs={12} md={6}>
                               <Box>
-                                    <Typography variant="h4">
+                                    <Typography style={{fontFamily: 'poppins', fontWeight:600, color:"#a5d6a7"}} variant="h4">
                                           Eceptional Timepieces<br />
                                           Authenticty Guarantee
                                     </Typography>
-                                    <Typography variant="h6" sx={{ my: 3, fontSize: 13, fontWeight: 300, color: 'gray' }}>
+                                    <Typography variant="h6" sx={{ my: 3,fontFamily: 'poppins', fontSize: 13, fontWeight: 300, color: 'gray' }}>
                                           From timeless classics to the most innovative independent brands, take your collection to new heights with a selection of exceptional timepieces.
                                     </Typography>
                                     <Link style={{textDecoration:"none"}} to='/explore'>
-                                    <Button variant="contained" style={{ backgroundColor: '#a5d6a7' }}>Explore</Button>
+                                    <Button variant="contained" style={{ backgroundColor: '#a5d6a7',fontFamily: 'poppins' }}>Explore</Button>
                                     </Link>
                               </Box>
                         </Grid>
