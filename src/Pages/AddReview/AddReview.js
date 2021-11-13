@@ -9,7 +9,7 @@ const AddReview = () => {
       const { user } = useAuth();
       const { register, handleSubmit, reset } = useForm();
       const onSubmit = data => {
-            console.log(data);
+            // console.log(data);
             axios.post('https://desolate-springs-66331.herokuapp.com/reviews', data)
                   .then(res => {
                         console.log(res);

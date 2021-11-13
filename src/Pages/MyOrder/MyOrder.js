@@ -20,7 +20,7 @@ const MyOrder = () => {
             })
                   .then(res => res.json())
                   .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         if (id) {
                               alert('Your Order is Canceled!');
                               const remaining = orders.filter(order => order._id !== id);

@@ -26,7 +26,7 @@ const MakeAdmin = () => {
                   .then(data => {
 
                         if (data.modifiedCount) {
-                              console.log(data);
+                              // console.log(data);
                               setEmail('');
                               setSuccess(true);
                         }

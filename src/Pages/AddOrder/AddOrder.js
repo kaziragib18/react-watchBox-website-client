@@ -23,7 +23,7 @@ const AddOrder = () => {
       let history = useHistory();
 
       const onSubmit = data => {
-            console.log(data);
+            // console.log(data);
             axios.post('https://desolate-springs-66331.herokuapp.com/orders', data)
                   .then(res => {
                         console.log(res);
