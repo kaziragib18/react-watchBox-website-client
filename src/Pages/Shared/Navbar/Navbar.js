@@ -128,18 +128,27 @@ const Navbar = () => {
                                                 </ListItem>
                                                 <Divider />
 
-                                                <ListItem button>
-                                                      <ListItemText>
-                                                            <Link className={drawerItem} to="/dashboard">DASHBOARD</Link>
-                                                      </ListItemText>
-                                                </ListItem>
-                                                <Divider />
-
-                                                <ListItem button>
-                                                      <ListItemText>
-                                                            <Link className={drawerItem} to="/login">LOGIN</Link>
-                                                      </ListItemText>
-                                                </ListItem>
+                                                {user?.email ?
+                                                      <>
+                                                            <ListItem button>
+                                                                  <ListItemText>
+                                                                        <Link className={drawerItem} to="/dashboard"><Button style={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 700 }} color="inherit">Dashboard</Button></Link>
+                                                                  </ListItemText>
+                                                            </ListItem>
+                                                            <Divider />
+                                                            <ListItem button>
+                                                                  <ListItemText>
+                                                                        <Link className={drawerItem} to="/login"><Button onClick={logOut} style={{ color: "#b71c1c", fontFamily: 'poppins', fontSize: 16, marginBottom: 2, fontWeight: 700 }} color="error">Logout</Button></Link>
+                                                                  </ListItemText>
+                                                            </ListItem>
+                                                      </>
+                                                      :
+                                                      <ListItem button>
+                                                            <ListItemText>
+                                                                  <Link className={drawerItem} to="/login"> <Button style={{ textDecoration: "none", color: "dark", fontFamily: 'poppins', fontSize: 14, fontWeight: 700 }} color="inherit">Login</Button></Link>
+                                                            </ListItemText>
+                                                      </ListItem>
+                                                }
                                           </List>
                                     </Box>
                               </Drawer>

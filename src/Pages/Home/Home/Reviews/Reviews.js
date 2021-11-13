@@ -8,7 +8,7 @@ const Reviews = () => {
             fetch('https://desolate-springs-66331.herokuapp.com/reviews')
                   .then(res => res.json())
                   .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         setReviews(data)
                   })
       }, [])
