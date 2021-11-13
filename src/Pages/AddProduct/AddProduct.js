@@ -6,10 +6,10 @@ import './AddProduct.css'
 const AddProduct = () => {
       const { register, handleSubmit, reset } = useForm();
       const onSubmit = data => {
-            console.log(data);
+            // console.log(data);
             axios.post('https://desolate-springs-66331.herokuapp.com/products', data)
                   .then(res => {
-                        console.log(res);
+                        // console.log(res);
                         if (res.data.insertedId) {
                               alert('Successfully Added');
                               reset();

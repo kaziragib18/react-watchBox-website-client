@@ -26,7 +26,7 @@ const AddOrder = () => {
             // console.log(data);
             axios.post('https://desolate-springs-66331.herokuapp.com/orders', data)
                   .then(res => {
-                        console.log(res);
+                        // console.log(res);
                         if (res.data.insertedId) {
                               alert('Successfully Added');
                               history.push("/myOrder");
