@@ -81,9 +81,9 @@ const Navbar = () => {
                                                 <Button style={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 700, color: "white" }} color="inherit">Explore</Button>
                                           </NavLink>
 
-                                          <NavLink className={navItem} to='/myOrder'>
+                                          {/* <NavLink className={navItem} to='/myOrder'>
                                                 <Button style={{ fontFamily: 'poppins', fontSize: 14, fontWeight: 700, color: "white" }} color="inherit">My Order</Button>
-                                          </NavLink>
+                                          </NavLink> */}
 
                                           {user?.email ?
                                                 <>

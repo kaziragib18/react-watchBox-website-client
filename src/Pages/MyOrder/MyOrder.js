@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
-import Navbar from '../Shared/Navbar/Navbar'
-import './MyOrder.css'
+import './MyOrder.css';
 
 const MyOrder = () => {
       const [orders, setOrders] = useState([]);
@@ -30,10 +29,8 @@ const MyOrder = () => {
       }
 
       return (
-            <>
-                  <Navbar></Navbar>
-                  <div id="orders" className="p-3">
-                        <h2 style={{fontFamily: 'poppins', fontWeight:600, color:"#a5d6a7"}} className="mt-2 fs-3">Your Orders:</h2>
+                  <div id="orders" className="p-1">
+                        <h2 style={{fontFamily: 'poppins', fontWeight:600, color:"#a5d6a7"}} className="mt-1 fs-4">Your Orders:</h2>
                         <hr className="text-dark" />
                         <div className="order__div">
                               <div className="order__container">
@@ -68,7 +65,6 @@ const MyOrder = () => {
                               </div>
                         </div>
                   </div>
-            </>
       );
 };
 

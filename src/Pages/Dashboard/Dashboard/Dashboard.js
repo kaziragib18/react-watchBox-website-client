@@ -17,6 +17,7 @@ import useAuth from './../../../hooks/useAuth';
 import AddProduct from '../../AddProduct/AddProduct';
 import ManageProducts from '../../ManageProducts/ManageProducts';
 // import ManageOrder from '../../ManageOrder/ManageOrder';
+import MyOrder from '../../MyOrder/MyOrder';
 import Payment from '../../Payment/Payment';
 import AddReview from '../../AddReview/AddReview';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -48,11 +49,12 @@ function Dashboard(props) {
                   <Link style={{ textDecoration: "none", color: "gray" }} to="/explore">
                         <Button color="inherit" sx={{ px: 7, py: 2, fontFamily: 'poppins', fontSize: 13, fontWeight: 700, color: "#2e7d32" }}>Explore</Button>
                   </Link>
+                  <Divider />
 
-                  <Link style={{ textDecoration: "none", color: "gray" }} to="/myOrder">
+                  <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/myOrder`}>
                         <Button color="inherit" sx={{ px: 6, py: 2, fontFamily: 'poppins', fontSize: 13, fontWeight: 700, color: "#2e7d32" }}>My Order</Button>
                   </Link>
-                  <Divider />
+
 
                   <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/addReview`}>
                         <Button color="inherit" sx={{ px: 6, py: 2, fontFamily: 'poppins', fontSize: 13, fontWeight: 700, color: "#2e7d32" }}>Add Review</Button>
@@ -88,7 +90,6 @@ function Dashboard(props) {
                   <Divider />
 
                   <Typography style={{ color: "#212121", fontFamily: 'poppins', fontSize: 16, marginTop: 20, marginBottom: 10, fontWeight: 700 }} color="error"><img style={{ width: '10%', marginBottom: 5, marginRight: 10 }} src={userIcon} alt="" /> {user.displayName}</Typography>
-
 
 
                   <Link style={{ textDecoration: "none", color: "gray" }} to={`${url}/`}>
@@ -177,6 +178,10 @@ function Dashboard(props) {
 
                               <Route exact path={path}>
                                     <DashboardHome></DashboardHome>
+                              </Route>
+
+                              <Route path={`${path}/myOrder`}>
+                                    <MyOrder></MyOrder>
                               </Route>
 
                               <Route path={`${path}/addReview`}>

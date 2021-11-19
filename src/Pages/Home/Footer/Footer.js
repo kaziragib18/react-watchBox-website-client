@@ -21,7 +21,6 @@ const Footer = () => {
       const { socialIcon } = useStyle();
       return (
             <footer>
-
                   <Container>
                         <Divider />
                         <Grid container spacing={3} sx={{ fontFamily: 'poppins', fontWeight: 700, my: 3 }}>

@@ -61,9 +61,9 @@ function App() {
               <ManageProducts></ManageProducts>
             </Route>
 
-            <Route exact path="/addOrder/:id">
+            <PrivateRoute exact path="/addOrder/:id">
               <AddOrder></AddOrder>
-            </Route>
+            </PrivateRoute>
 
             <Route exact path="/order/:id">
               <Order></Order>
