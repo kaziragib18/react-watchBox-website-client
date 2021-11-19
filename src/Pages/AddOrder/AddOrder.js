@@ -29,7 +29,7 @@ const AddOrder = () => {
                         // console.log(res);
                         if (res.data.insertedId) {
                               alert('Successfully Added');
-                              history.push("/myOrder");
+                              history.push("/dashboard/myOrder");
                               reset();
                         }
                   })

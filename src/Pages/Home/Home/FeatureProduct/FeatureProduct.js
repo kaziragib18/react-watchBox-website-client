@@ -24,7 +24,7 @@ const FeatureProduct = () => {
                   <div className="product__div">
                         <div className="product__container">
                               {
-                                    products.slice(0,6).map(product => <Product
+                                    products.slice(0,4).map(product => <Product
                                           key={product.id}
                                           product={product}
                                     ></Product>)
