@@ -14,7 +14,7 @@ const Order = () => {
                   .then(res => res.json())
                   .then(data => setProduct(data))
 
-      }, [])
+      }, [id])
 
       return (
             <div>

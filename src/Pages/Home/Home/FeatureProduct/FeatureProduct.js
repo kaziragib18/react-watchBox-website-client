@@ -15,7 +15,7 @@ const FeatureProduct = () => {
 
       return (
             <div id="products" className="p-3">
-                  <h2 style={{fontFamily: 'poppins', fontWeight:600, color:"#a5d6a7"}} className="mt-4 fs-4">Check Out Our Latest Arrival</h2>
+                  <h2 style={{fontFamily: 'poppins', fontWeight:600, color:"#a5d6a7"}} className="mt-5 pt-5 fs-4">Check Out Our Latest Arrival</h2>
                   <hr className="dark"/>
                   {/* 
                   {isLoading && <CircularProgress />
