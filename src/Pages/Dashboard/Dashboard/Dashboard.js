@@ -188,7 +188,7 @@ function Dashboard(props) {
                                     <AddReview></AddReview>
                               </Route>
 
-                              <Route path={`${path}/payment`}>
+                              <Route path={`${path}/payment/:orderId`}>
                                     <Payment></Payment>
                               </Route>
 

@@ -2,7 +2,7 @@ import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography
 import React, { useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import { NavLink, useHistory } from 'react-router-dom';
-import login from '../../../images/login.jpg';
+import login from '../../../images/undraw_register.svg';
 import Navbar from '../../Shared/Navbar/Navbar';
 
 const Register = () => {

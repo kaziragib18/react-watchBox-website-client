@@ -39,15 +39,15 @@ const AddOrder = () => {
             <>
                   <Navbar></Navbar>
                   <div className="add__order">
-                        <h2 style={{fontFamily: 'poppins', fontWeight:600, color:"#a5d6a7"}} className="fs-3  mt-4 pb-2">For Purchasing Please Fill up the Form</h2>
+                        <h2 style={{ fontFamily: 'poppins', fontWeight: 600, color: "#a5d6a7" }} className="fs-3  mt-4 pb-2">For Purchasing Please Fill up the Form</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
                               <input type="name" {...register("name", { maxLength: 20 })} value={user.displayName} />
                               <input type="email" {...register("email", { maxLength: 30 })} value={user.email} />
                               <input type="number" {...register("phone")} placeholder="Phone Number" required />
                               <textarea {...register("address")} placeholder="Enter your address" required />
-                              <input {...register("brand",{required:true})} value={product.brand} />
-                              <input type="text" {...register("series", {required:true})} value={product.series} />
-                              {/* <input {...register("price")} value={product.price} /> */}
+                              <input {...register("brand", { required: true })} value={product.brand} />
+                              <input type="text" {...register("series", { required: true })} value={product.series} />
+                              <input {...register("price", { required: true })} value={product.price} />
                               <button className="btn btn-success py-2 px-4 mt-2 mb-5" type="submit">Submit</button>
                         </form>
                   </div>

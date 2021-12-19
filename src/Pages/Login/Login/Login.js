@@ -1,7 +1,7 @@
 import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
-import login from '../../../images/login-2.jpg';
+import login from '../../../images/undraw_login.svg';
 import Navbar from '../../Shared/Navbar/Navbar';
 import googleIcon from '../../../images/google-symbol.png'
 import useAuth from '../../../hooks/useAuth';
@@ -26,11 +26,11 @@ const Login = () => {
             loginUser(loginData.email, loginData.password, location, history);
             e.preventDefault();
       }
-      
+
       const handleGoogleSignIn = () => {
             signInWithGoogle(location, history)
       }
-      
+
       return (
             <>
                   <Navbar></Navbar>
@@ -92,7 +92,7 @@ const Login = () => {
                               </Grid>
 
                               <Grid item xs={12} md={6}>
-                                    <img src={login} style={{ width: '95%', marginTop: 10 }} alt="" />
+                                    <img src={login} style={{ width: '100%', marginTop: 40 }} alt="" />
                               </Grid>
 
                         </Grid>

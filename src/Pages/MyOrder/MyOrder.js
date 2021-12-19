@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
+import { Link } from 'react-router-dom';
 import './MyOrder.css';
 
 const MyOrder = () => {
@@ -7,7 +8,7 @@ const MyOrder = () => {
       const { user } = useAuth();
 
       useEffect(() => {
-            fetch('https://desolate-springs-66331.herokuapp.com/orders?email='+user.email)
+            fetch('https://desolate-springs-66331.herokuapp.com/orders?email=' + user.email)
                   .then(res => res.json())
                   .then(data => setOrders(data))
       }, []);
@@ -29,42 +30,48 @@ const MyOrder = () => {
       }
 
       return (
-                  <div id="orders" className="p-1">
-                        <h2 style={{fontFamily: 'poppins', fontWeight:600, color:"#a5d6a7"}} className="mt-1 fs-4">Your Orders:</h2>
-                        <hr className="text-dark" />
-                        <div className="order__div">
-                              <div className="order__container">
-                                    {
-                                          orders.map(order =>
-                                                <div className="order__card pb-3" key={order._id}>
+            <div id="orders" className="p-1">
+                  <h2 style={{ fontFamily: 'poppins', fontWeight: 600, color: "#a5d6a7" }} className="mt-1 fs-4">Your Orders:</h2>
+                  <hr className="text-dark" />
+                  <div className="order__div">
+                        <div className="order__container">
+                              {
+                                    orders.map(order =>
+                                          <div className="order__card pb-3" key={order._id}>
 
-                                                      <h4 className="pt-3  fs-6 fw-bold">Name: {order.name}</h4>
-                                                      <hr />
+                                                <h4 className="pt-3  fs-6 fw-bold">Name: {order.name}</h4>
+                                                <hr />
 
-                                                      <h4 className="pt-1  fs-6 fw-bold">Email: {order.email}</h4>
-                                                      <hr />
+                                                <h4 className="pt-1  fs-6 fw-bold">Email: {order.email}</h4>
+                                                <hr />
 
-                                                      <h4 className="pt-1  fs-6 fw-bold">Brand: {order.brand}</h4>
-                                                      <hr />
+                                                <h4 className="pt-1  fs-6 fw-bold">Brand: {order.brand}</h4>
+                                                <hr />
 
-                                                      <h4 className="pt-1  fs-6 fw-bold">Series: {order.series}</h4>
-                                                      <hr />
+                                                <h4 className="pt-1  fs-6 fw-bold">Series: {order.series}</h4>
+                                                <hr />
 
-                                                      {/* <h4 className="pt-1  fs-6 fw-bold">Price: {order.price}</h4>
-                                                      <hr /> */}
+                                                <h4 className="pt-1  fs-6 fw-bold">Price: {order.price}</h4>
+                                                <hr />
 
-                                                      <h4 className="pt-1  fs-6 fw-bold">Order Id: {order._id}</h4>
-                                                      <hr />
+                                                <h4 className="pt-1  fs-6 fw-bold">Order Id: {order._id}</h4>
+                                                <hr />
 
-                                                      <h5 className="p-2 fs-6 fw-bold">Phone Number: {order.phone}</h5>
-                                                      <hr />
-                                                      <button onClick={() => handleDelete(order._id)} className="btn btn-danger">Cancel</button>
-                                                </div>
-                                          )
-                                    }
-                              </div>
+                                                <h5 className="p-2 fs-6 fw-bold">Phone Number: {order.phone}</h5>
+                                                <hr />
+
+                                                {/* onClick={() => handlePayment(order._id)} */}
+
+                                                <Link to={`/dashboard/payment/${order._id}`}><button className="btn btn-success">Payment</button></Link>
+                                                {' '}
+
+                                                <button onClick={() => handleDelete(order._id)} className="btn btn-danger">Cancel</button>
+                                          </div>
+                                    )
+                              }
                         </div>
                   </div>
+            </div>
       );
 };
 

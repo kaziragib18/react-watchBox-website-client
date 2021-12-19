@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import useAuth from '../../hooks/useAuth';
-import Review from '../../images/review1.jpg';
+import Review from '../../images/undraw_review.svg';
 import './AddReview.css'
 
 const AddReview = () => {
@@ -30,6 +30,7 @@ const AddReview = () => {
                                           <h2 style={{fontFamily: 'poppins', fontSize: 13, fontWeight: 700, color: "#a5d6a7"}} className="fs-4 p-2 mt-4">Add Your Reviews</h2>
                                           <form onSubmit={handleSubmit(onSubmit)}>
                                                 <input {...register("userName", { required: true, maxLength: 50 })} value={user.displayName} />
+                                                <input {...register("email", { required: true, maxLength: 50 })} value={user.email} />
                                                 <input type="date" {...register("date")} placeholder=" Date" required/>
                                                 <textarea {...register("reviewDetails", {required:true})} placeholder="Your Review" />
                                                 <button className="btn btn-success py-2 px-4 mt-2 mb-5" type="submit">Submit</button>
